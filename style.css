@@ -1,5 +1,4 @@
 body {
-    align: center;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -7,7 +6,6 @@ body {
 }
 
 header {
-    align: left;
     background: #35424a;
     color: #ffffff;
     padding: 20px;
@@ -24,22 +22,51 @@ nav ul {
     padding: 0; /* Remove default padding */
     display: flex; /* Use flexbox for horizontal layout */
     justify-content: center; /* Center the nav items */
+    position: relative; /* Enable positioning for dropdown */
 }
 
 nav ul li {
+    position: relative; /* Set position to relative for dropdown */
     margin: 0 15px; /* Space between items */
 }
 
 nav ul li a {
     color: #ffffff; /* Text color */
     text-decoration: none; /* Remove underline */
-    padding: 5px 10px; /* Add some padding */
+    padding: 10px 15px; /* Add some padding */
     transition: background 0.3s; /* Smooth background transition */
 }
 
 nav ul li a:hover {
     background: #45a049; /* Background color on hover */
     border-radius: 5px; /* Rounded corners */
+}
+
+/* Dropdown Styles */
+.dropdown {
+    display: none; /* Hide dropdown by default */
+    position: absolute; /* Position it relative to the parent */
+    background: #35424a; /* Match the navbar background */
+    margin-top: 10px; /* Space between main menu and dropdown */
+    border-radius: 5px; /* Rounded corners */
+    z-index: 1; /* Ensure dropdown is above other elements */
+}
+
+.dropdown li {
+    margin: 0; /* Remove margin for dropdown items */
+}
+
+nav ul li:hover .dropdown {
+    display: block; /* Show dropdown on hover */
+}
+
+.dropdown a {
+    padding: 10px 15px; /* Padding for dropdown items */
+    display: block; /* Make links block elements */
+}
+
+.dropdown a:hover {
+    background: #45a049; /* Background color on hover for dropdown */
 }
 
 main {
