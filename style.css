@@ -14,6 +14,34 @@ header {
     text-align: center;
 }
 
+/* Navigation Bar Styles */
+nav {
+    margin-top: 15px;
+}
+
+nav ul {
+    list-style: none; /* Remove default bullet points */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: center; /* Center the nav items */
+}
+
+nav ul li {
+    margin: 0 15px; /* Space between items */
+}
+
+nav ul li a {
+    color: #ffffff; /* Text color */
+    text-decoration: none; /* Remove underline */
+    padding: 5px 10px; /* Add some padding */
+    transition: background 0.3s; /* Smooth background transition */
+}
+
+nav ul li a:hover {
+    background: #45a049; /* Background color on hover */
+    border-radius: 5px; /* Rounded corners */
+}
+
 main {
     padding: 20px;
 }
@@ -35,8 +63,8 @@ main {
 }
 
 .product img {
-    max-width: auto;
-    height: 150px;
+    max-width: 100%; /* Use 100% to fit within product card */
+    height: 150px; /* Fixed height */
     border-radius: 5px;
 }
 
@@ -58,7 +86,44 @@ footer {
     padding: 20px;
     background: #35424a;
     color: #ffffff;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
+    position: relative; /* Change to relative for better layout */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stack nav items vertically */
+        align-items: center; /* Center items in vertical layout */
+    }
+    
+    nav ul li {
+        margin: 10px 0; /* Space between items in vertical layout */
+    }
+
+    .products {
+        justify-content: center; /* Center products on smaller screens */
+    }
+
+    .product {
+        width: 90%; /* Make products take up most of the screen */
+        margin: 10px 0; /* Adjust margin */
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        font-size: 1.5em; /* Reduce header font size */
+    }
+
+    footer {
+        font-size: 0.8em; /* Reduce footer font size */
+    }
+
+    button {
+        padding: 8px 10px; /* Smaller button padding */
+    }
+
+    .product {
+        padding: 10px; /* Smaller product padding */
+    }
 }
